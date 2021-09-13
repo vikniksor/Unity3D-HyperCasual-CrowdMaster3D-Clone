@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class AtackTransition : PlayerTransition
+public class AttackTransition : PlayerTransition
 {
     public override void Enable()
     {
