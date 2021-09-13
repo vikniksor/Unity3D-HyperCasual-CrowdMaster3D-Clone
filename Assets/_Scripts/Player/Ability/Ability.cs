@@ -1,18 +1,19 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
-public class Ability : MonoBehaviour
+public abstract class Ability : ScriptableObject
 {
-    // Start is called before the first frame update
-    void Start()
+    protected Rigidbody Rigidbody;
+
+    public abstract event UnityAction AbilityEnded;
+
+    public void Init(Rigidbody rigidbody)
     {
-        
+        Rigidbody = rigidbody;
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    public abstract void UseAbility(AttackState attackState);
+    
 }
