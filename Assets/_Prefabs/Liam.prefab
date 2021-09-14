@@ -1016,6 +1016,9 @@ GameObject:
   - component: {fileID: 3513531470630453689}
   - component: {fileID: 3513531470630453688}
   - component: {fileID: 8515848263566284745}
+  - component: {fileID: 5309580900906108454}
+  - component: {fileID: 4368522989282850736}
+  - component: {fileID: 3930346521379560969}
   m_Layer: 0
   m_Name: Liam
   m_TagString: Untagged
@@ -1127,7 +1130,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e1e9cceb2fb38fa4496c8dedcb808bf6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _transitions: []
+  _transitions:
+  - {fileID: 4368522989282850736}
+  _staminaAccumulator: {fileID: 3930346521379560969}
   _playerControl: {fileID: 2733107002974102195}
   _maxSpeed: 8
   _speedRatio: 0.08
@@ -1144,6 +1149,48 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _targetState: {fileID: 3513531470630453688}
+--- !u!114 &5309580900906108454
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8196810238706307436}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c75c721017116e049b83eb189e870747, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _transitions: []
+  _staminaAccumulator: {fileID: 3930346521379560969}
+--- !u!114 &4368522989282850736
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8196810238706307436}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 86163cbddaf986f41b19292fb3344b7c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _targetState: {fileID: 5309580900906108454}
+--- !u!114 &3930346521379560969
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8196810238706307436}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3483feed7a478404fa7bff8d02b48fa4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _accumulationTime: 1.5
+  _ability: {fileID: 11400000, guid: a5de1329c18bac1418d83feca5eb8c5b, type: 2}
+  _ultimateAbility: {fileID: 11400000, guid: 5e86ec7bf92fd7f47abd2f7b66572df9, type: 2}
 --- !u!1 &8196814480845718542
 GameObject:
   m_ObjectHideFlags: 0
