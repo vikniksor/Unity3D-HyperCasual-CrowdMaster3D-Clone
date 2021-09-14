@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c5c115fe5fb85534e8a23ea82682c5f5, type: 3}
   m_Name: UltimateHand
   m_EditorClassIdentifier: 
-  _attackForce: 0
-  _usefullTime: 0
+  _attackForce: 40
+  _usefullTime: 0.25

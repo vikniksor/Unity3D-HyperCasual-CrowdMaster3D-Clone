@@ -1019,6 +1019,7 @@ GameObject:
   - component: {fileID: 5309580900906108454}
   - component: {fileID: 4368522989282850736}
   - component: {fileID: 3930346521379560969}
+  - component: {fileID: 4661615793356566907}
   m_Layer: 0
   m_Name: Liam
   m_TagString: Untagged
@@ -1071,8 +1072,8 @@ Rigidbody:
   m_GameObject: {fileID: 8196810238706307436}
   serializedVersion: 2
   m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
+  m_Drag: 6
+  m_AngularDrag: 5
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
@@ -1161,7 +1162,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c75c721017116e049b83eb189e870747, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _transitions: []
+  _transitions:
+  - {fileID: 8515848263566284745}
+  - {fileID: 4661615793356566907}
   _staminaAccumulator: {fileID: 3930346521379560969}
 --- !u!114 &4368522989282850736
 MonoBehaviour:
@@ -1191,6 +1194,20 @@ MonoBehaviour:
   _accumulationTime: 1.5
   _ability: {fileID: 11400000, guid: a5de1329c18bac1418d83feca5eb8c5b, type: 2}
   _ultimateAbility: {fileID: 11400000, guid: 5e86ec7bf92fd7f47abd2f7b66572df9, type: 2}
+--- !u!114 &4661615793356566907
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8196810238706307436}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 097180f0cf258784286221c7e8e3c84a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _targetState: {fileID: 3513531470630453689}
+  _attackState: {fileID: 5309580900906108454}
 --- !u!1 &8196814480845718542
 GameObject:
   m_ObjectHideFlags: 0
