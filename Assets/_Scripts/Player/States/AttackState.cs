@@ -14,6 +14,7 @@ public class AttackState : PlayerState
 
     private void OnEnable()
     {
+        //Animator.SetTrigger("attackTrigger");  // uncomment when create an animation for attack.
         _currentAbility = _staminaAccumulator.GetAbility();
         _currentAbility.AbilityEnded += OnAbilityEnded;
 

@@ -20,6 +20,7 @@ public class MoveState : PlayerState
     private void OnDisable()
     {
         _playerControl.DirectionChange -= OnDirectionChange;
+        //Animator.SetFloat("run", 0); // uncomment here and in update when create an animation for run...
     }
 
 
@@ -36,5 +37,11 @@ public class MoveState : PlayerState
         {
             Rigidbody.MoveRotation(Quaternion.LookRotation(Rigidbody.velocity, Vector3.up));
         }
+    }
+
+
+    private void Update()
+    {
+        //Animator.SetFloat("run", Rigidbody.velocity.magnitude / _maxSpeed);
     }
 }
