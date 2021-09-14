@@ -9,11 +9,46 @@ public class AttackState : PlayerState
 
     private Ability _currentAbility;
 
-    public event UnityAction CollisionDetected;
+    public event UnityAction<IDamageable> CollisionDetected;
     public event UnityAction AbilityEnded;
 
     private void OnEnable()
     {
         _currentAbility = _staminaAccumulator.GetAbility();
+        _currentAbility.AbilityEnded += OnAbilityEnded;
+
+        _currentAbility.UseAbility(this);
+    }
+
+    private void OnDisable()
+    {
+        _currentAbility.AbilityEnded -= OnAbilityEnded;
+    }
+
+    private void OnAbilityEnded()
+    {
+        AbilityEnded?.Invoke();
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.TryGetComponent(out IDamageable damageable))
+        {
+            CollisionDetected?.Invoke(damageable);
+        }
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.TryGetComponent(out IDamageable damageable))
+        {
+            CollisionDetected?.Invoke(damageable);
+        }
+    }
+
+
+    private void Update()
+    {
+        
     }
 }
