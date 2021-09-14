@@ -82,6 +82,7 @@ public class EnemyStateMachine : MonoBehaviour, IDamageable
         {
             _healthContainer.TakeDamage((int)force);
             Transit(_brokenState);
+            _brokenState.ApplyDamage(rigidbody, force);
             return true;
         }
 
