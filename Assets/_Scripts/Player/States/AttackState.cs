@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
-public class AttackState : PlayerState
+public class AttackState : State
 {
     [SerializeField] private StaminaAccumulator _staminaAccumulator;
 

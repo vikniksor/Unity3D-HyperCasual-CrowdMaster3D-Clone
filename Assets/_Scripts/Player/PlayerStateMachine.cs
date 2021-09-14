@@ -5,9 +5,9 @@ using UnityEngine;
 [RequireComponent(typeof(Rigidbody), typeof(Animator))]
 public class PlayerStateMachine : MonoBehaviour
 {
-    [SerializeField] private PlayerState _firstState;
+    [SerializeField] private State _firstState;
 
-    private PlayerState _currentState;
+    private State _currentState;
     private Rigidbody _rigidbody;
     private Animator _animator;
 
@@ -31,7 +31,7 @@ public class PlayerStateMachine : MonoBehaviour
     {
         if (_currentState == null) return;
 
-        PlayerState nextState = _currentState.GetNextState();
+        State nextState = _currentState.GetNextState();
         if (nextState != null)
         {
             Transit(nextState);
@@ -39,7 +39,7 @@ public class PlayerStateMachine : MonoBehaviour
     }
 
 
-    private void Transit(PlayerState nextState)
+    private void Transit(State nextState)
     {
         if (_currentState != null) { _currentState.Exit(); }
 
