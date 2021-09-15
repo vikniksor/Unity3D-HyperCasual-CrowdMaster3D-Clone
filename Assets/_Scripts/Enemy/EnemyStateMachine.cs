@@ -6,11 +6,11 @@ using UnityEngine.Events;
 [RequireComponent(typeof(Rigidbody), typeof(Animator))]
 public class EnemyStateMachine : MonoBehaviour, IDamageable
 {
-    [SerializeField] private State _firstState;
+    [SerializeField] private EnemyState _firstState;
     [SerializeField] private BrokenState _brokenState;
     [SerializeField] private HealthContainer _healthContainer;
 
-    private State _currentState;
+    private EnemyState _currentState;
     private Rigidbody _rigidbody;
     private Animator _animator;
 
@@ -49,7 +49,7 @@ public class EnemyStateMachine : MonoBehaviour, IDamageable
     private void Start()
     {
         _currentState = _firstState;
-        _currentState.Enter(_rigidbody, _animator);
+        _currentState.Enter(_rigidbody, _animator, Player);
 
     }
 
@@ -58,7 +58,7 @@ public class EnemyStateMachine : MonoBehaviour, IDamageable
     {
         if (_currentState == null) return;
 
-        State nextState = _currentState.GetNextState();
+        EnemyState nextState = _currentState.GetNextState();
         if (nextState != null)
         {
             Transit(nextState);
@@ -66,13 +66,13 @@ public class EnemyStateMachine : MonoBehaviour, IDamageable
     }
 
 
-    private void Transit(State nextState)
+    private void Transit(EnemyState nextState)
     {
         if (_currentState != null) { _currentState.Exit(); }
 
         _currentState = nextState;
 
-        if (_currentState != null) { _currentState.Enter(_rigidbody, _animator); }
+        if (_currentState != null) { _currentState.Enter(_rigidbody, _animator, Player); }
 
     }
 

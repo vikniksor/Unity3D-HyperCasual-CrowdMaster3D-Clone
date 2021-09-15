@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
-public class BrokenState : State
+public class BrokenState : EnemyState
 {
     [SerializeField] private float _fallDistance;
 
